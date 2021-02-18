@@ -1,27 +1,36 @@
 import React from 'react';
 
-// const getRandomInteger = (maxNumber) => Math.floor(Math.random() * maxNumber);
-// const NUMBER_OF_CATS = 10;
-
 class RandomCat extends React.Component {
+  debugger;
   render() {
-    if (this.props.width === undefined) {
-      this.props.width = '400';
-    }
-    if (this.props.height === undefined) {
-      this.props.height = '200';
-    }
-    console.log(this.props);
-
-    //const randomCat = getRandomInteger(NUMBER_OF_CATS);
     let width;
+    if (this.props.width === undefined) {
+      width = '400';
+    } else {
+      width = this.props.width;
+    }
+
     let height;
+    if (this.props.height === undefined) {
+      height = '400';
+    } else {
+      height = this.props.height;
+    }
+    // const height = this.props.height === undefined ? '200' : this.props.height;
+    //const height = this.props.height ? this.props.height : '200';
+    // const height = this.props.height || '200';
+
     return (
       <a href="https://www.fillmurray.com">
-        <img src={`https://www.fillmurray.com/${this.props.width}/${this.props.height}`} alt="Random Bill" />
+        <img src={`https://www.fillmurray.com/${width}/${this.props.height || '200'}`} alt="Random Bill" />
       </a>
     );
   }
 }
+
+// RandomCat.defaultProps = {
+//   width: '400',
+//   height: '200',
+// };
 
 export default RandomCat;
