@@ -3,7 +3,7 @@ import React from 'react';
 import InputText from './Input';
 
 const handleFormInput = (data) => {
-  console.log(data);
+  console.log(data.name, data.value);
 };
 
 const Form = () => {

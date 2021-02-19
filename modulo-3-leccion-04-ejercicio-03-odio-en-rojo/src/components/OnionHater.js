@@ -1,5 +1,7 @@
 import React from 'react';
 
+let classInput = 'noHateOnion';
+
 class OnionHater extends React.Component {
   constructor(props) {
     super(props);
@@ -7,16 +9,17 @@ class OnionHater extends React.Component {
     this.onKeyUpListener = this.onKeyUpListener.bind(this);
   }
 
-  render() {
+  onKeyUpListener(ev) {
     const cebolla = 'cebolla';
-    const onKeyUpListener = () => {
-      this.isHating = true;
-      this.forceUpdate();
-    };
+    ev.target.value.toLowerCase().includes(cebolla) ? (classInput = 'hateOnion') : (classInput = 'noHateOnion');
+
+    this.forceUpdate();
+  }
+  render() {
     return (
       <textarea
-        className="noHateOnion"
-        onKeyUp={onKeyUpListener}
+        className={classInput}
+        onKeyUp={this.onKeyUpListener}
         name=""
         id=""
         cols="30"
