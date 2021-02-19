@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MurrayList from './components/MurrayList';
+//import MurrayList from './components/MurrayList';
+import App from './components/App';
 
-ReactDOM.render(<MurrayList />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

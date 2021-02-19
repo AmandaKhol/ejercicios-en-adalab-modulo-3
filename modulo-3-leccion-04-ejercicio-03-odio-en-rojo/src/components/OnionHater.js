@@ -1,10 +1,17 @@
 import React from 'react';
 
 class OnionHater extends React.Component {
+  constructor(props) {
+    super(props);
+    this.isHating = false;
+    this.onKeyUpListener = this.onKeyUpListener.bind(this);
+  }
+
   render() {
     const cebolla = 'cebolla';
-    const onKeyUpListener = (ev) => {
-      ev.target.value.includes(cebolla) ? alert('ODIO LA PUTA CEBOLLA.') : console.log('Pues vale');
+    const onKeyUpListener = () => {
+      this.isHating = true;
+      this.forceUpdate();
     };
     return (
       <textarea
